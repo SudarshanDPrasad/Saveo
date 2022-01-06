@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MovieDetailActivity">
+
+    <data>
+
+        <variable
+            name="dataDetails"
+            type="com.application.saveo.response.ResultDTO" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#3a547b">
+
+                <Button
+                    android:id="@+id/btn_backtoMain"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_margin="@dimen/Margin20dp"
+                    android:background="@drawable/ic_baseline_arrow_back_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/Margin20dp"
+                    android:text="@string/movies"
+                    android:textSize="@dimen/Margin20dp" />
+
+                <Button
+                    android:layout_width="26dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/Margin20dp"
+                    android:background="@drawable/ic_baseline_share_24" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1"
+                    android:layout_width="@dimen/Margin120dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/btn_backtoMain"
+                    android:layout_margin="@dimen/Margin20dp"
+                    android:background="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/Margin20dp"
+                    app:cardElevation="@dimen/Margin100dp">
+
+                    <ImageView
+                        android:id="@+id/ivDetailImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_backtoMain"
+                    android:layout_marginTop="@dimen/Margin20dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/cardView1"
+                    android:text="@{dataDetails.title}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Margin15dp" />
+
+                <TextView
+                    android:id="@+id/relasedate"
+                    style="@style/NameofShowing"
+                    android:layout_below="@id/tv_title"
+                    android:text="@string/release_date" />
+
+                <TextView
+                    style="@style/checking"
+                    android:layout_below="@id/tv_title"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/relasedate"
+                    android:text="@{dataDetails.releaseDate}" />
+
+                <TextView
+                    android:id="@+id/popularity"
+                    style="@style/NameofShowing"
+                    android:layout_below="@id/relasedate"
+                    android:text= "@string/popularity" />
+
+                <TextView
+                    style="@style/checking"
+                    android:layout_below="@id/relasedate"
+                    android:layout_toEndOf="@id/popularity"
+                    android:layout_marginStart="5dp"
+                    android:text="@{Double.toString(dataDetails.popularity)}" />
+
+
+                <TextView
+                    android:id="@+id/VoteAverage"
+                    style="@style/NameofShowing"
+                    android:layout_below="@id/popularity"
+                    android:text="@string/vote_average" />
+
+                <TextView
+                    android:id="@+id/vvt"
+                    style="@style/checking"
+                    android:layout_below="@id/popularity"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/VoteAverage" />
+
+                <Button
+                    android:id="@+id/star1"
+                    style="@style/Star"
+                    android:layout_toEndOf="@id/cardView1" />
+
+                <Button
+                    android:id="@+id/star2"
+                    style="@style/Star"
+                    android:layout_toEndOf="@id/star1" />
+
+                <Button
+                    android:id="@+id/star3"
+                    style="@style/Star"
+                    android:layout_toEndOf="@id/star2" />
+
+                <Button
+                    android:id="@+id/star4"
+                    style="@style/Star"
+                    android:layout_toEndOf="@id/star3" />
+
+                <Button
+                    android:id="@+id/star5"
+                    style="@style/Star"
+                    android:layout_toEndOf="@id/star4" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/ov1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/Margin20dp"
+                    android:text="@string/overview"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/Margin20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ov1"
+                    android:layout_margin="@dimen/Margin20dp"
+                    android:text="@{dataDetails.overview}"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rectangleradiusshape"
+            android:text="@string/book_now"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="checking">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/Margin10dp</item>
+    </style>
+
+    <style name="NameofShowing">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/Margin10dp</item>
+        <item name="android:layout_toRightOf">@id/cardView1</item>
+    </style>
+
+    <style name="Star">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:layout_marginTop">56dp</item>
+        <item name="android:background">@drawable/ic_baseline_star_24</item>
+        <item name="android:layout_below">@id/VoteAverage</item>
+    </style>
+</resources>
+
