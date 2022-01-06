@@ -33,28 +33,28 @@ class MovieDetailActivity : AppCompatActivity() {
         }
 
         val vote : Int = (data.voteAverage/2).toInt()
-        movieDetailBinding.vvt.setText(vote.toString())
+        movieDetailBinding.vvt.setText(vote.toString() + " Average")
 
 
-        if(data.voteAverage.toString() <=2.0.toString()) {
-            movieDetailBinding.star1.setBackgroundResource(R.drawable.blackstar)
+        if(data.voteAverage.toString() >=2.0.toString()) {
+            movieDetailBinding.star5.setBackgroundResource(R.drawable.fullstar)
         }
 
-        if(data.voteAverage.toString() <= 4.0.toString()){
-            movieDetailBinding.star2.setBackgroundResource(R.drawable.blackstar)
+        if(data.voteAverage.toString() >= 4.0.toString()){
+            movieDetailBinding.star4.setBackgroundResource(R.drawable.fullstar)
         }
 
-        if(data.voteAverage.toString() <= 6.0.toString()){
-            movieDetailBinding.star3.setBackgroundResource(R.drawable.blackstar)
+        if(data.voteAverage.toString() >= 6.0.toString()){
+            movieDetailBinding.star3.setBackgroundResource(R.drawable.fullstar)
         }
 
-        if(data.voteAverage.toString() <= 8.0.toString()){
-            movieDetailBinding.star4.setBackgroundResource(R.drawable.blackstar)
+        if(data.voteAverage.toString() >= 8.0.toString()){
+            movieDetailBinding.star2.setBackgroundResource(R.drawable.fullstar)
 
         }
 
-        if(data.voteAverage.toString() <= 9.0.toString()){
-            movieDetailBinding.star5.setBackgroundResource(R.drawable.blackstar)
+        if(data.voteAverage.toString() >= 9.0.toString()){
+            movieDetailBinding.star1.setBackgroundResource(R.drawable.fullstar)
         }
     }
 }
