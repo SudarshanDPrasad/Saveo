@@ -32,7 +32,7 @@ class MovieDetailActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val vote : Double = data.voteAverage/2
+        val vote : Int = (data.voteAverage/2).toInt()
         movieDetailBinding.vvt.setText(vote.toString())
 
 
