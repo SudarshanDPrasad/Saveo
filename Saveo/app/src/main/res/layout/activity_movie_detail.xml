@@ -22,7 +22,7 @@
             android:weightSum="2">
 
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -30,25 +30,35 @@
 
                 <Button
                     android:id="@+id/btn_backtoMain"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
+                    android:layout_width="31dp"
+                    android:layout_height="21dp"
                     android:layout_margin="@dimen/Margin20dp"
-                    android:background="@drawable/ic_baseline_arrow_back_24" />
+                    android:background="@drawable/ic_baseline_arrow_back_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/Margin20dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/movies"
-                    android:textSize="@dimen/Margin20dp" />
+                    android:textSize="@dimen/Margin20dp"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintStart_toEndOf="@+id/btn_backtoMain"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
+                    android:id="@+id/button"
                     android:layout_width="26dp"
                     android:layout_height="22dp"
                     android:layout_alignParentEnd="true"
                     android:layout_margin="@dimen/Margin20dp"
-                    android:background="@drawable/ic_baseline_share_24" />
+                    android:background="@drawable/ic_baseline_share_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView1"
@@ -56,9 +66,13 @@
                     android:layout_height="200dp"
                     android:layout_below="@id/btn_backtoMain"
                     android:layout_margin="@dimen/Margin20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="44dp"
                     android:background="@android:color/transparent"
                     app:cardCornerRadius="@dimen/Margin20dp"
-                    app:cardElevation="@dimen/Margin100dp">
+                    app:cardElevation="@dimen/Margin100dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_backtoMain">
 
                     <ImageView
                         android:id="@+id/ivDetailImage"
@@ -73,82 +87,124 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/btn_backtoMain"
-                    android:layout_marginTop="@dimen/Margin20dp"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="28dp"
                     android:layout_toEndOf="@id/cardView1"
                     android:text="@{dataDetails.title}"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/Margin15dp" />
+                    android:textSize="@dimen/Margin15dp"
+                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
                 <TextView
                     android:id="@+id/relasedate"
                     style="@style/NameofShowing"
                     android:layout_below="@id/tv_title"
-                    android:text="@string/release_date" />
+                    android:layout_marginTop="16dp"
+                    android:text="@string/release_date"
+                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
                 <TextView
-                    style="@style/checking"
+                    style="@style/TitleNames"
                     android:layout_below="@id/tv_title"
-                    android:layout_marginStart="5dp"
                     android:layout_toEndOf="@id/relasedate"
-                    android:text="@{dataDetails.releaseDate}" />
+                    android:text="@{dataDetails.releaseDate}"
+                    app:layout_constraintStart_toEndOf="@+id/relasedate"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
                 <TextView
                     android:id="@+id/popularity"
                     style="@style/NameofShowing"
                     android:layout_below="@id/relasedate"
-                    android:text= "@string/popularity" />
+                    android:text="@string/popularity"
+                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/VoteAverage" />
+
 
                 <TextView
-                    style="@style/checking"
+                    style="@style/TitleNames"
                     android:layout_below="@id/relasedate"
                     android:layout_toEndOf="@id/popularity"
-                    android:layout_marginStart="5dp"
-                    android:text="@{Double.toString(dataDetails.popularity)}" />
+                    android:text="@{Double.toString(dataDetails.popularity)}"
+                    app:layout_constraintStart_toEndOf="@+id/popularity"
+                    app:layout_constraintTop_toBottomOf="@+id/VoteAverage" />
 
+                <TextView
+                    android:id="@+id/Votecount"
+                    style="@style/NameofShowing"
+                    android:layout_below="@id/VoteAverage"
+                    android:text="Vote Count :"
+                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/relasedate" />
+
+
+                <TextView
+                    style="@style/TitleNames"
+                    android:layout_below="@id/relasedate"
+                    android:layout_toEndOf="@id/popularity"
+                    android:text="@{Double.toString(dataDetails.voteCount)}"
+                    app:layout_constraintStart_toEndOf="@+id/Votecount"
+                    app:layout_constraintTop_toBottomOf="@+id/relasedate" />
 
                 <TextView
                     android:id="@+id/VoteAverage"
                     style="@style/NameofShowing"
                     android:layout_below="@id/popularity"
-                    android:text="@string/vote_average" />
+                    android:text="@string/vote_average"
+                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/Votecount" />
 
                 <TextView
                     android:id="@+id/vvt"
-                    style="@style/checking"
+                    style="@style/TitleNames"
                     android:layout_below="@id/popularity"
-                    android:layout_marginStart="5dp"
-                    android:layout_toEndOf="@id/VoteAverage" />
+                    android:layout_toEndOf="@id/VoteAverage"
+                    app:layout_constraintStart_toEndOf="@+id/VoteAverage"
+                    app:layout_constraintTop_toBottomOf="@+id/Votecount" />
 
                 <Button
                     android:id="@+id/star1"
                     style="@style/Star"
-                    android:layout_toEndOf="@id/cardView1" />
+                    android:layout_width="25dp"
+                    android:layout_height="21dp"
+                    android:layout_toEndOf="@id/cardView1"
+                    app:layout_constraintStart_toEndOf="@+id/star2"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
                 <Button
                     android:id="@+id/star2"
                     style="@style/Star"
-                    android:layout_toEndOf="@id/star1" />
+                    android:layout_toEndOf="@id/star1"
+                    app:layout_constraintStart_toEndOf="@+id/star3"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
                 <Button
                     android:id="@+id/star3"
                     style="@style/Star"
-                    android:layout_toEndOf="@id/star2" />
+                    android:layout_toEndOf="@id/star2"
+                    app:layout_constraintStart_toEndOf="@+id/star4"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
                 <Button
                     android:id="@+id/star4"
                     style="@style/Star"
-                    android:layout_toEndOf="@id/star3" />
+                    android:layout_toEndOf="@id/star3"
+                    app:layout_constraintStart_toEndOf="@+id/star5"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
                 <Button
                     android:id="@+id/star5"
                     style="@style/Star"
-                    android:layout_toEndOf="@id/star4" />
+                    android:layout_marginStart="36dp"
+                    android:layout_toEndOf="@id/star4"
+                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -159,9 +215,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/Margin20dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="28dp"
                     android:text="@string/overview"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/Margin20dp" />
+                    android:textSize="@dimen/Margin20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -169,15 +229,19 @@
                     android:layout_below="@id/ov1"
                     android:layout_margin="@dimen/Margin20dp"
                     android:text="@{dataDetails.overview}"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ov1" />
 
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/Margin30dp"
             android:background="@drawable/rectangleradiusshape"
             android:text="@string/book_now"
             android:textColor="@color/black" />
