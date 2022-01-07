@@ -43,12 +43,13 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="12dp"
-                    android:text="@string/movies"
+                    android:text="@string/movie_detials"
                     android:textSize="@dimen/Margin20dp"
                     app:layout_constraintEnd_toStartOf="@+id/button"
                     app:layout_constraintHorizontal_bias="0.494"
                     app:layout_constraintStart_toEndOf="@+id/btn_backtoMain"
                     app:layout_constraintTop_toTopOf="parent" />
+
 
                 <Button
                     android:id="@+id/button"
@@ -109,7 +110,7 @@
                 <TextView
                     style="@style/TitleNames"
                     android:layout_below="@id/tv_title"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="40dp"
                     android:layout_toEndOf="@id/relasedate"
                     android:text="@{dataDetails.releaseDate}"
@@ -166,42 +167,15 @@
                     app:layout_constraintStart_toEndOf="@+id/VoteAverage"
                     app:layout_constraintTop_toBottomOf="@+id/Votecount" />
 
-                <Button
-                    android:id="@+id/star1"
-                    style="@style/Star"
-                    android:layout_width="25dp"
-                    android:layout_height="21dp"
-                    android:layout_toEndOf="@id/cardView1"
-                    app:layout_constraintStart_toEndOf="@+id/star2"
-                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
-
-                <Button
-                    android:id="@+id/star2"
-                    style="@style/Star"
-                    android:layout_toEndOf="@id/star1"
-                    app:layout_constraintStart_toEndOf="@+id/star3"
-                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
-
-                <Button
-                    android:id="@+id/star3"
-                    style="@style/Star"
-                    android:layout_toEndOf="@id/star2"
-                    app:layout_constraintStart_toEndOf="@+id/star4"
-                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
-
-                <Button
-                    android:id="@+id/star4"
-                    style="@style/Star"
-                    android:layout_toEndOf="@id/star3"
-                    app:layout_constraintStart_toEndOf="@+id/star5"
-                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
-
-                <Button
-                    android:id="@+id/star5"
-                    style="@style/Star"
-                    android:layout_marginStart="36dp"
-                    android:layout_toEndOf="@id/star4"
-                    app:layout_constraintStart_toEndOf="@+id/cardView1"
+                <RatingBar
+                    android:id="@+id/ratingStar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="156dp"
+                    android:layout_marginTop="16dp"
+                    android:numStars="5"
+                    app:layout_constraintStart_toStartOf="@+id/cardView1"
                     app:layout_constraintTop_toBottomOf="@+id/popularity" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

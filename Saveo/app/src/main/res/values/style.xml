@@ -4,8 +4,9 @@
     <style name="TitleNames">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/Margin15dp</item>
-        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginTop">13dp</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:fontFamily">"@font/poppins_medium"</item>
     </style>
 
 
@@ -15,6 +16,7 @@
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:layout_toRightOf">@id/cardView1</item>
         <item name="android:layout_marginStart">36dp</item>
+        <item name="android:fontFamily">"@font/poppins_medium"</item>
     </style>
 
     <style name="Star">
