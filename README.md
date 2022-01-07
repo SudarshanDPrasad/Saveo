@@ -1,5 +1,8 @@
 # Saveo
 
+
+![Green and Cream Modern Sales Marketing Presentation](https://user-images.githubusercontent.com/86509887/148522514-fb37b083-5b29-473d-9c45-b294899d151a.jpg)
+
 This project is used by the following companies:
 
 * GitHub
