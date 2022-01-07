@@ -13,8 +13,6 @@ class MovieDetailActivity : AppCompatActivity() {
 
     private lateinit var movieDetailBinding: ActivityMovieDetailBinding
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         movieDetailBinding = ActivityMovieDetailBinding.inflate(layoutInflater)
@@ -33,7 +31,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
 
         val vote : Int = (data.voteAverage/2).toInt()
-        movieDetailBinding.vvt.setText(vote.toString() + " Average")
+        movieDetailBinding.vvt.setText(vote.toString() + ".0")
 
 
         if(data.voteAverage.toString() >=2.0.toString()) {

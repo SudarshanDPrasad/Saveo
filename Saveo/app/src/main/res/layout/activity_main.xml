@@ -58,8 +58,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -70,7 +68,7 @@
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_TopView" />
+                app:layout_constraintTop_toBottomOf="@+id/fflayout" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_ListWithDetails"
@@ -81,14 +79,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:layout_editor_absoluteX="4dp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_TopView"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                android:id="@+id/fflayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/rv_TopView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+            </FrameLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

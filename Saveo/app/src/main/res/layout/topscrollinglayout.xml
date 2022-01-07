@@ -5,21 +5,21 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/Margin10dp"
         app:cardElevation="@dimen/Margin50sp"
         app:cardCornerRadius="@dimen/Margin10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
             <ImageView
                 android:id="@+id/iv_topimage"
                 android:layout_width="match_parent"
                 android:scaleType="fitXY"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
