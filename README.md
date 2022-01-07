@@ -8,6 +8,7 @@ This project is used by the following companies:
 * Retrofit Library
 * API
 * MVVM Model 
+* Coroutine Scope
 
 # Tech Stack ✨
 
