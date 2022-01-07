@@ -23,7 +23,7 @@ class ResultRepo @Inject constructor(val movieApi: MovieApi) {
 
     suspend fun callApi(): Resource<ResponseDTO> {
         return try {
-            val response = MovieModule.ProvidesApi().apimovies(1)
+            val response = MovieModule.ProvidesApi().apimovies(4)
             responseHandler.handleSuccess(response)
         } catch (e: Exception) {
             responseHandler.handleException(e)
