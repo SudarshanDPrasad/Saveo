@@ -10,16 +10,12 @@
         app:cardElevation="@dimen/Margin50sp"
         app:cardCornerRadius="10dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
 
             <ImageView
                 android:id="@+id/iv_imageLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-        </RelativeLayout>
+
 
     </androidx.cardview.widget.CardView>
 

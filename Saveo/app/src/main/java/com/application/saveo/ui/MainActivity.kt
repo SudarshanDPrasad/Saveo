@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity(), onClick {
         resultViewModel = ViewModelProvider(this).get(ResultViewModel::class.java)
         setAdaptor()
 
-
         resultViewModel.movieload().observe(this, {
             it?.let {
                 CoroutineScope(Dispatchers.Main).launch {
