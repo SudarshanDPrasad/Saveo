@@ -85,10 +85,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:id="@+id/fflayout"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/rv_TopView"
+                    android:paddingStart="80dp"
+                    android:paddingEnd="80dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal" />
